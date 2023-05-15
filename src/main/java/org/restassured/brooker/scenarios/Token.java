@@ -5,6 +5,9 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import org.restassured.brooker.helpers.Config;
+import org.restassured.brooker.helpers.TokenService;
+
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import static io.restassured.RestAssured.*;
@@ -48,7 +51,7 @@ public class Token {
     }
 
     @Test
-    public void t03_TryCreateTokenWithInvalidBody() {
+    public void t03_TryCreateTokenWithInvalidBody() throws IOException {
         Map<String, String> payloadInvalid = new HashMap<>();
         payloadInvalid.put("user", "admin");
         payloadInvalid.put("pass", "password123");
