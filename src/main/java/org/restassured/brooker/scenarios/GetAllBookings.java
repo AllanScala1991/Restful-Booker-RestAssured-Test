@@ -1,9 +1,10 @@
-package org.restassured.brooker.helpers;
+package org.restassured.brooker.scenarios;
 
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.restassured.brooker.helpers.Config;
 
 import java.time.LocalDate;
 import java.util.HashMap;
