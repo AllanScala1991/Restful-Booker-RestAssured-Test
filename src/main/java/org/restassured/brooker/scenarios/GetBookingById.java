@@ -14,7 +14,6 @@ import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class GetBookingById {
     private static final Map<String, LocalDate> bookingsDates = new HashMap<>();
     private static final Map<String, Object> payload = new HashMap<>();
@@ -34,7 +33,7 @@ public class GetBookingById {
     }
 
     @Test
-    public void t01_getBookingById() {
+    public void getBookingById() {
         String bookingId = given()
                 .contentType("application/json")
                 .body(payload)
@@ -54,7 +53,7 @@ public class GetBookingById {
     }
 
     @Test
-    public void t02_tryGetBookingWithInvalidId() {
+    public void tryGetBookingWithInvalidId() {
         given()
                 .contentType("application/json")
                 .when()

@@ -33,20 +33,21 @@ public class CreateBooking {
     }
 
     @Test
-    public void t01_createNewBookingSuccessfully() {
+    public void createNewBookingSuccessfully() {
         given()
                 .contentType("application/json")
                 .body(payload)
                 .when()
                 .post("/booking")
                 .then()
+                .log().all()
                 .statusCode(200)
                 .body("bookingid", is(notNullValue()))
                 .body("booking.firstname", is("James"));
     }
 
     @Test
-    public void t02_tryCreateBookingWithInvalidPayloadKeys() {
+    public void tryCreateBookingWithInvalidPayloadKeys() {
         Map<String, Object> invalidPayloadKeys = payload;
         invalidPayloadKeys.remove("firstname");
         invalidPayloadKeys.replace("lastname", "");

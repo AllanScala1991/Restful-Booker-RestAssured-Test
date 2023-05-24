@@ -13,7 +13,6 @@ import java.util.Map;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Token {
     @BeforeClass
     public static void setupTest() {
@@ -21,7 +20,7 @@ public class Token {
     }
 
     @Test
-    public void t01_generateTokenSuccessfully() {
+    public void generateTokenSuccessfully() {
         Map<String, String> payload = new HashMap<String, String>();
         payload.put("username", "admin");
         payload.put("password", "password123");
@@ -36,7 +35,7 @@ public class Token {
     }
 
     @Test
-    public void t02_TryCreateTokenWithInvalidUsername() {
+    public void tryCreateTokenWithInvalidUsername() {
         Map<String, String> payloadError = new HashMap<>();
         payloadError.put("username", "invalid");
         payloadError.put("password", "password123");
@@ -51,7 +50,7 @@ public class Token {
     }
 
     @Test
-    public void t03_TryCreateTokenWithInvalidBody() throws IOException {
+    public void tryCreateTokenWithInvalidBody() throws IOException {
         Map<String, String> payloadInvalid = new HashMap<>();
         payloadInvalid.put("user", "admin");
         payloadInvalid.put("pass", "password123");

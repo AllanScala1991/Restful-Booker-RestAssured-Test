@@ -34,7 +34,7 @@ public class PartialUpdate {
     }
 
     @Test
-    public void t01_partialUpdateBookingByID() {
+    public void partialUpdateBookingByID() {
         Map<String, Object> payload = new HashMap<>();
         payload.put("totalprice", 299);
         payload.put("additionalneeds", "food");
@@ -51,7 +51,7 @@ public class PartialUpdate {
     }
 
     @Test
-    public void t02_tryPartialUpdateBookingWithEmptyToken() {
+    public void tryPartialUpdateBookingWithEmptyToken() {
         Map<String, Object> payload = new HashMap<>();
         payload.put("totalprice", 599);
         payload.put("additionalneeds", "pizza");
@@ -67,7 +67,7 @@ public class PartialUpdate {
     }
 
     @Test
-    public void t03_tryPartialUpdateBookingWithSendInvalidId() {
+    public void tryPartialUpdateBookingWithSendInvalidId() {
         Map<String, Object> payload = new HashMap<>();
         payload.put("totalprice", 125);
         payload.put("additionalneeds", "hamburguer");

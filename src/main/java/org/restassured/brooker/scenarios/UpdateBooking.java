@@ -16,7 +16,6 @@ import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class UpdateBooking {
     private static Integer id;
     private static String token;
@@ -44,7 +43,7 @@ public class UpdateBooking {
     }
 
     @Test
-    public void t01_updateBookingById() {
+    public void updateBookingById() {
         given()
                 .contentType("application/json")
                 .cookie("token", token)
@@ -59,7 +58,7 @@ public class UpdateBooking {
     }
 
     @Test
-    public void t02_tryUpdateBookingByIdWithNoSendToken() {
+    public void tryUpdateBookingByIdWithNoSendToken() {
         given()
                 .contentType("application/json")
                 .body(payload)
@@ -71,7 +70,7 @@ public class UpdateBooking {
     }
 
     @Test
-    public void t03_tryUpdateBookingWithSendInvalidId() {
+    public void tryUpdateBookingWithSendInvalidId() {
         given()
                 .contentType("application/json")
                 .cookie("token", token)
@@ -84,7 +83,7 @@ public class UpdateBooking {
     }
 
     @Test
-    public void t04_tryUpdateBookingWithoutPayload() {
+    public void tryUpdateBookingWithoutPayload() {
         given()
                 .contentType("application/json")
                 .cookie("token", token)
