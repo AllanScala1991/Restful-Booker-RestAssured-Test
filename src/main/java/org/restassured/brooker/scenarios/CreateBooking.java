@@ -14,7 +14,7 @@ import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class CreateToken {
+public class CreateBooking {
     private static final Map<String, LocalDate> bookingsDates = new HashMap<>();
     private static final Map<String, Object> payload = new HashMap<>();
 
