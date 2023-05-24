@@ -40,7 +40,6 @@ public class CreateBooking {
                 .when()
                 .post("/booking")
                 .then()
-                .log().all()
                 .statusCode(200)
                 .body("bookingid", is(notNullValue()))
                 .body("booking.firstname", is("James"));
